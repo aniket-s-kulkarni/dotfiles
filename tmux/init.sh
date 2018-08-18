@@ -11,5 +11,5 @@ rm -fr ~/.tmux ~/.tmux.conf
 cd
 git clone https://github.com/gpakosz/.tmux.git
 ln -s -f .tmux/.tmux.conf
-cp ${0%*/}/.tmux.conf.local ~/.tmux.conf.local
+ln -s ${0%*/}/.tmux.conf.local ~/.tmux.conf.local
 cd ~/.tmux && git apply ${0%*/}/scrollback.diff

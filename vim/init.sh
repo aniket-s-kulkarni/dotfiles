@@ -7,7 +7,7 @@
 
 echo "Removing old settings"
 rm -rf ~/.vimrc ~/.vim
-cp ${0%*/}/.vimrc ~/.vimrc
+ln -s ${0%*/}/.vimrc ~/.vimrc
 mkdir -p ~/.vim/
 
 echo "Getting Vundle"
