@@ -48,7 +48,7 @@ Plugin 'junegunn/vim-slash'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'junegunn/vim-peekaboo'
-"Plugin 'gregsexton/gitv'
+Plugin 'gregsexton/gitv'
 "Bundle 'junkblocker/patchreview-vim'
 "Bundle 'codegram/vim-codereview'
 Plugin 'fs111/pydoc.vim'
@@ -73,6 +73,7 @@ Plugin 'sts10/vim-pink-moon'
 Plugin 'ryanoasis/vim-devicons'
 "Plugin 'osyo-manga/vim-hopping'
 "Plugin 'tpope/vim-vinegar'
+Plugin 'hotwatermorning/auto-git-diff'
 Plugin 'tpope/vim-surround'
 Plugin 'guns/vim-sexp'
 Plugin 'tpope/vim-sexp-mappings-for-regular-people'
@@ -168,8 +169,8 @@ let g:ctrlp_extensions = [ 'branches']
 let g:airline_left_sep = "\uE0B4"
 let g:airline_right_sep = "\uE0B6"
 let g:airline_section_y = ''
-let g:airline_section_error = ''
-let g:airline_section_warning = ''
+"let g:airline_section_error = ''
+"let g:airline_section_warning = ''
 let g:airline_skip_empty_sections = 1
 
 let g:airline#extensions#tabline#show_tab_nr = 1
@@ -195,7 +196,7 @@ function! KubernetesMake()
 	let make = glob("build/run.sh")
 	if !empty(make)
 		let &makeprg = make . " make"
-		let &errorformat = "%f:%l:%c %m"
+		let &errorformat = "|| %f:%l:%c %m"
 	endif
 endfunction
 
